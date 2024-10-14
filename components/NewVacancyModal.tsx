@@ -19,7 +19,7 @@ import { Vacancy } from "@/lib/types";
 interface NewVacancyModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (vacancy: Omit<Vacancy, "id" | "stage">) => void;
+  onSubmit: (vacancy: Omit<Vacancy, "id" | "stage" | "column_id">) => void;
 }
 
 export const NewVacancyModal: React.FC<NewVacancyModalProps> = ({
@@ -27,7 +27,9 @@ export const NewVacancyModal: React.FC<NewVacancyModalProps> = ({
   onClose,
   onSubmit,
 }) => {
-  const [newVacancy, setNewVacancy] = useState<Omit<Vacancy, "id" | "stage">>({
+  const [newVacancy, setNewVacancy] = useState<
+    Omit<Vacancy, "id" | "stage" | "column_id">
+  >({
     title: "",
     source: "custom",
     url: "",
@@ -85,7 +87,7 @@ export const NewVacancyModal: React.FC<NewVacancyModalProps> = ({
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="dou">DOU</SelectItem>
-              <SelectItem value="djinni">Djinni</SelectItem>
+              <SelectItem value="djini">Djinni</SelectItem>
               <SelectItem value="custom">Custom</SelectItem>
             </SelectContent>
           </Select>
