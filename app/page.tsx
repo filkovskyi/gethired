@@ -1,5 +1,5 @@
-import KanbanDashboard from '@/components/kanban-dashboard'
+import VacancyKanbanDashboard from "@/app/vacancies/page";
 
 export default function Home() {
-  return <KanbanDashboard />
+  return <VacancyKanbanDashboard />;
 }
